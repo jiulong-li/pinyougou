@@ -11,5 +11,6 @@
 
     <artifactId>pinyougou-pojo</artifactId>
 
+    <packaging>jar</packaging>
 
 </project>

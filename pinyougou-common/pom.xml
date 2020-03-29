@@ -11,6 +11,8 @@
 
     <artifactId>pinyougou-common</artifactId>
 
+    <packaging>jar</packaging>
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>

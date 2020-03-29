@@ -8,13 +8,13 @@
     <artifactId>pinyougou-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>pinyougou-com.pinyougou.pojo</module>
         <module>pinyougou-dao</module>
         <module>pinyougou-common</module>
         <module>pinyougou-sellergoods-interface</module>
         <module>pinyougou-sellergoods-service</module>
         <module>pinyougou-manager-web</module>
         <module>pinyougou-shop-web</module>
+        <module>pinyougou-pojo</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -25,7 +25,7 @@
         <spring.version>4.2.4.RELEASE</spring.version>
         <pagehelper.version>4.0.0</pagehelper.version>
         <servlet-api.version>2.5</servlet-api.version>
-        <dubbo.version>2.5.3</dubbo.version>
+        <dubbo.version>2.6.0</dubbo.version>
         <zookeeper.version>3.4.7</zookeeper.version>
         <zkclient.version>0.1</zkclient.version>
         <mybatis.version>3.2.8</mybatis.version>
@@ -39,6 +39,7 @@
         <security.version>3.2.3.RELEASE</security.version>
         <solrj.version>4.10.3</solrj.version>
         <ik.version>2012_u6</ik.version>
+        <fastjson.version>1.2.28</fastjson.version>
     </properties>
 
     <dependencyManagement>
@@ -77,11 +78,6 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
-                <artifactId>spring-context-support</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
                 <version>${spring.version}</version>
             </dependency>
@@ -90,6 +86,13 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>dubbo</artifactId>
                 <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>spring</artifactId>
+                        <groupId>org.springframework</groupId>
+                    </exclusion>
+                </exclusions>
+
             </dependency>
             <dependency>
                 <groupId>org.apache.zookeeper</groupId>
@@ -109,7 +112,7 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>1.2.28</version>
+                <version>${fastjson.version}</version>
             </dependency>
             <dependency>
                 <groupId>javassist</groupId>
@@ -263,7 +266,6 @@
                 <version>1.4.01</version>
             </dependency>
         </dependencies>
-
     </dependencyManagement>
 
 

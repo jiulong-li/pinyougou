@@ -7,10 +7,10 @@
         http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
 http://code.alibabatech.com/schema/dubbo ">
 
-	<dubbo:protocol name="dubbo" port="20881"></dubbo:protocol>
+	<dubbo:protocol name="dubbo" port="20881"/>
 	<dubbo:application name="pinyougou-sellergoods-service"/>
 	<dubbo:registry address="zookeeper://www.lijiulong.top:2181"/>
 	<dubbo:annotation package="com.pinyougou.sellergoods.service.impl"/>
-
+	<dubbo:reference id="BrandService" interface="com.pinyougou.sellergoods.service.BrandService"/>
 
 </beans>
